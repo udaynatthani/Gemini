@@ -1,0 +1,217 @@
+/* ========== Main Layout ========== */
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ========== Cards ========== */
+.cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: #e8f0fe;
+  padding: 16px;
+  border-radius: 12px;
+  min-width: 240px;
+  max-width: 280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* ========== Chat Messages ========== */
+.chat-messages {
+  flex: 1;
+  width: 100%;
+  max-width: 800px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 120px;
+}
+
+.message-bubble {
+  max-width: 70%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 15px;
+  line-height: 1.4;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  word-wrap: break-word;
+}
+
+.message-bubble.user {
+  align-self: flex-end;
+  background-color: #2563eb;
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.message-bubble.bot {
+  align-self: flex-start;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  white-space: pre-wrap;
+  font-size: 15px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* ========== Input Container ========== */
+.input-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e8f0fe;
+  padding: 14px 20px;
+  border-radius: 30px;
+  width: 90%;
+  max-width: 800px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-container textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
+  max-height: 150px;
+  resize: none;
+  overflow-y: auto;
+  padding-right: 30px;
+  width: 100%;
+  min-height: 40px;
+  line-height: 1.5em;
+}
+
+.input-icons {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.send-icon {
+  cursor: pointer;
+  color: #2563eb;
+  transition: transform 0.2s;
+}
+
+.send-icon:hover {
+  transform: scale(1.1);
+}
+
+.disclaimer {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ========== Top Right Login Button ========== */
+.auth-btn-topright {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.auth-btn-topright button {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.auth-btn-topright button:hover {
+  background: linear-gradient(135deg, #4338ca, #4f46e5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== Typing Indicator ========== */
+.typing-indicator {
+  display: flex;
+  gap: 5px;
+  align-self: flex-start;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  font-size: 15px;
+  font-style: italic;
+  padding: 10px 14px;
+  border-radius: 16px;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  max-width: 70%;
+  animation: blink 1.4s infinite;
+}
+
+/* Dot Animation for Typing Indicator */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #333;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+  
